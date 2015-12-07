@@ -20,4 +20,5 @@ Meteor.methods
 
 newDeck = (type) ->
   cards = Cards.find({type: type}).fetch()
+  cards = _.pluck(cards, '_id')
   _.shuffle(cards)
