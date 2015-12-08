@@ -4,6 +4,9 @@ Router.configure
 Router.route '/', ->
   render('home')
 
+Router.route '/games', name: 'games.index', data: ->
+  Games.find()
+
 Router.route '/games/:_id/client', name: 'games.client', data: ->
   Games.findOne(_id: @params._id)
 

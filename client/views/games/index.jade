@@ -1,0 +1,13 @@
+template(name='gamesIndex')
+  .section
+    h1 Games
+  .divider
+  .section
+    .collection
+      each this
+        .collection-item
+          = name
+          .secondary-content
+            a.btn(href="{{pathFor route='games.client'}}") client
+            a.btn(href="{{pathFor route='games.table'}}") table
+          .clearfix
